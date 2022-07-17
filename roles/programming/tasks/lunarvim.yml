@@ -1,0 +1,9 @@
+- name: Download script
+  get_url:
+    url: https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh
+    dest: "/tmp"
+
+- name: Run script
+  become: True
+  become_user: "{{ username }}"
+  command: "bash /tmp/install.sh"

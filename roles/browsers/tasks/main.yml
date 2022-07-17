@@ -1,0 +1,9 @@
+# # Web Browser
+
+# Install browsers
+- name: Install "{{item}}"
+  community.general.pacman:
+    name: 
+      - "{{item}}"
+    state: present
+  loop: "{{browsers}}"

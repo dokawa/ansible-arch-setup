@@ -1,0 +1,12 @@
+- name: Programming core
+  pacman:
+    name:
+      - yarn
+      - asdf-vm
+      - neovim
+
+- name: Programming apps
+  pacman:
+    name:
+      - code
+      - pycharm-community-edition

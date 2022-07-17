@@ -6,6 +6,7 @@
     - zsh
     - zsh-completions
     - zsh-syntax-highlighting
+    - zsh-autosuggestions
    state: present
 
 - name: install fzf for zsh
@@ -13,7 +14,6 @@
    name: 
     - fzf
    state: present
-
 
 - name: change "{{ username }}"'s shell to zsh
   become: yes
@@ -39,24 +39,4 @@
    group: "{{ username }}"
    mode: u+rw,g+r,o--
 
-- name: clone oh-my-zsh for users
-  tags:
-    # Suppress warning: [ANSIBLE0006] git used in place of git module
-    # Git module doesn't allow us to set `core.autocrlf=input`.
-    - skip_ansible_lint
-  become: yes
-  become_user: '{{ username }}'
-  # core.autocrlf=input prevents https://github.com/robbyrussell/oh-my-zsh/issues/4402
-  command: 'git clone -c core.autocrlf=input https://github.com/robbyrussell/oh-my-zsh.git .oh-my-zsh'
-  args:
-    chdir: '~{{ username }}'
-    creates: '~{{ username }}/.oh-my-zsh'
-
-
-- name: copy powerlevel10k theme
-  copy:
-   src: zsh-theme-powerlevel10k/
-   dest: /usr/share/zsh-theme-powerlevel10k/
-   force: False
-   mode: u+rw,g+xr,o+x
 

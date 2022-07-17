@@ -1,0 +1,47 @@
+### Playbook Configuration Variables
+# You may modify the following variables to customize the playbook to your
+# specific needs, however do not remove any variables, they are all required
+# for the playbook to function.
+
+## User info
+username: marcio
+
+## Task Configuration
+setup_zsh: True
+
+## Dotfiles
+## Please make sure to update 
+pull_dotfiles: True
+
+dotfiles:
+    url: https://github.com/linuxpiper/dotfiles.git
+    destination: projects/dotfiles
+    rcup_flags: -fx README.md
+
+## App Preferences
+## ===========================
+# Web Browser
+# Value can be: firefox, brave, or chromium
+browsers:
+    - firefox
+    - brave-bin
+    - google-chrome
+    - chromium
+    - opera
+
+## Installs LibreOffice Fresh when True
+install_office: True
+
+## Spacevim? You know you need it
+install_spacevim: True
+## ===========================
+
+## AUR vars
+## ===========================
+use_aur: True
+
+aur:
+    dir: aur
+    packages:
+        - yay
+## ===========================

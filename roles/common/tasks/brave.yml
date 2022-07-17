@@ -1,5 +1,0 @@
-- name: install Brave
-  community.general.pacman:
-   name: 
-    - brave
-   state: present 

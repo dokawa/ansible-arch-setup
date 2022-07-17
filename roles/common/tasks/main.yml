@@ -3,44 +3,17 @@
    update_cache: yes
    upgrade: yes
 
-
-# Configure pacman (colorize and repos)
-- include: pacman.yml
-
-# Basic apps (vlc, kitty, etc.)
 - include: core-apps.yml
 
 # Install and configure zsh
 - include: zsh.yml
   when: setup_zsh == True
 
-# Install and configure spacevim
-- include: spacevim.yml
-  when: install_spacevim == True
-
-# Install KDE and Additional Plasma Applications
-- include: kde.yml
-  when: install_kde == True
-
-# Web Browser
-- include: "{{browser}}.yml"
-
-# Terminal web browsers
-- include: terminal_browsers.yml
-  when: install_terminal_browsers == True
-
-# Office
-- include: office.yml
-  when: install_office == True
-
-# Console based Email
-- include: aerc.yml
-  when: install_aerc == True
+# # Office
+# - include: office.yml
+#   when: install_office == True
   
-# AUR apps
-- include: aur.yml
-  when: use_aur == True
+# # AUR apps
+# - include: aur.yml
+#   when: use_aur == True
 
-# Dotfiles
-- include: dotfiles.yml
-  when: pull_dotfiles == True

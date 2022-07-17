@@ -1,5 +1,0 @@
-- name: install aerc
-  community.general.pacman:
-   name: 
-    - aerc
-   state: present 
