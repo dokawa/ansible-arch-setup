@@ -4,19 +4,7 @@
 # for the playbook to function.
 
 ## User info
-username: marcio
-
-## Task Configuration
-setup_zsh: True
-
-## Dotfiles
-## Please make sure to update 
-pull_dotfiles: True
-
-dotfiles:
-    url: https://github.com/linuxpiper/dotfiles.git
-    destination: projects/dotfiles
-    rcup_flags: -fx README.md
+username: daniel
 
 ## App Preferences
 ## ===========================
@@ -29,12 +17,14 @@ browsers:
     - chromium
     - opera
 
+# monitors:
+#     # - monitorDP-0
+#     # - monitorDVI-I-1
+#     # - monitorHDMI-0
+#     monitoreDP1
+
 ## Installs LibreOffice Fresh when True
 install_office: True
-
-## Spacevim? You know you need it
-install_spacevim: True
-## ===========================
 
 ## AUR vars
 ## ===========================

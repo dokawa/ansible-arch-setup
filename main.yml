@@ -9,4 +9,5 @@
   roles:
       - { role: common, tags: [ common ] }
       - { role: browsers, tags: [ browsers ] }
-      - { role: programming, tags: [programming] }
+      - { role: programming, tags: [ programming ] }
+      - { role: xfce_config, tags: [ xfce ] }

@@ -1,12 +1,20 @@
-- name: Programming core
+- name: Install programming core
   pacman:
     name:
       - yarn
       - asdf-vm
       - neovim
 
-- name: Programming apps
+- name: Install IDEs
   pacman:
     name:
       - code
       - pycharm-community-edition
+
+
+# https://github.com/MicrosoftDocs/live-share/issues/224
+- name: Jupyter VSCode requirements
+  pacman:
+    name:
+      - gnome-keyring 
+      - libsecret  
