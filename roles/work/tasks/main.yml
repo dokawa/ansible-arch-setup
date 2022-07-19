@@ -1,0 +1,14 @@
+- name: Check updates
+  pacman: 
+   update_cache: yes
+   upgrade: yes
+
+- import_tasks: environment.yml
+
+
+
+
+
+
+
+

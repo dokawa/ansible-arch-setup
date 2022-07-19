@@ -1,6 +1,6 @@
 ---
 
-- name: install zsh
+- name: Install zsh
   community.general.pacman:
    name: 
     - zsh
@@ -9,19 +9,19 @@
     - zsh-autosuggestions
    state: present
 
-- name: install fzf for zsh
+- name: Install fzf for zsh
   community.general.pacman:
    name: 
     - fzf
    state: present
 
-- name: change "{{ username }}"'s shell to zsh
+- name: Change "{{ username }}"'s shell to zsh
   become: yes
   user:
    name: "{{ username }}"
    shell: /usr/bin/zsh
 
-- name: copy zsh dotfile
+- name: Copy zsh dotfile
   copy: 
    src: user_home/.zshrc 
    dest: /home/{{ username }}/.zshrc

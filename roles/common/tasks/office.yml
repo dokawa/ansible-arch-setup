@@ -1,4 +1,4 @@
-- name: install LibreOffice Fresh (EN)
+- name: Install LibreOffice Fresh (EN)
   community.general.pacman:
    name: 
     - libreoffice-fresh

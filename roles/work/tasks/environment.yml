@@ -1,0 +1,14 @@
+- name: Virtual Machine
+  pacman:
+    name:
+      - virtualbox
+      - virtualbox-guest-iso
+      - virtualbox-host-dkms
+
+- name: Slack
+  pacman:
+    name:
+      - slack-desktop
+
+
+

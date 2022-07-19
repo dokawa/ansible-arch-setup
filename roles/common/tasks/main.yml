@@ -1,24 +1,20 @@
-
-
-- name: check updates
+- name: Check updates
   pacman: 
    update_cache: yes
    upgrade: yes
   become: true
 
-- include: core-apps.yml
+- import_tasks: core-apps.yml
 
 # Install and configure zsh
-- include: zsh.yml
-  when: setup_zsh == True
+- import_tasks: zsh.yml
 
 
 - include: g810.yml
 
 
 # # Office
-# - include: office.yml
+# - import_tasks:office.yml
 #   when: install_office == True
   
-
 

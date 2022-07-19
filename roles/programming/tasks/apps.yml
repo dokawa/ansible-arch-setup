@@ -1,4 +1,4 @@
-- name: Programming core
+- name: Install programming core
   pacman:
     name:
       - yarn
@@ -8,9 +8,16 @@
       - docker
   become: yes
 
-- name: Programming apps
+- name: Install IDEs
   pacman:
     name:
       - visual-studio-code-bin
       - pycharm-community-edition
-  become: yes
+
+
+# https://github.com/MicrosoftDocs/live-share/issues/224
+- name: Jupyter VSCode requirements
+  pacman:
+    name:
+      - gnome-keyring 
+      - libsecret
