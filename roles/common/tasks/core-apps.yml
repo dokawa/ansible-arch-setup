@@ -25,3 +25,7 @@
       - curl
       - wget
     state: present
+
+- name: Install theme
+  ansible.builtin.command:
+    cmd: echo y | yay -S zsh-theme-powerlevel10k

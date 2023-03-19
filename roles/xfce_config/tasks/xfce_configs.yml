@@ -1,0 +1,33 @@
+- name: Get monitors
+  shell: xrandr | grep -oP -e '^(.*) connected'
+  register: monitors_raw
+
+- name: Filter connected monitors
+  set_fact:  
+      monitors: |  
+        {{monitors_raw.stdout_lines |   
+          map('regex_replace',' connected','')  | 
+          list }}
+
+- name: List monitors
+  debug: msg="Monitors detected {{ monitors }}"
+
+- name: Copy background to tmp
+  become: True
+  become_user: "{{ username }}"
+  copy: 
+   src: background/wallpaper.png
+   dest: /tmp/wallpaper.png
+   force: False
+   owner: "{{ username }}"
+   group: "{{ username }}"
+   mode: u+rw,g+r,o--
+
+- name: Change background
+  become: True
+  become_user: "{{ username }}"
+  command: 'xfconf-query --channel xfce4-desktop --property /backdrop/screen0/"monitor{{item}}"/workspace0/last-image --set /tmp/wallpaper.png'
+  loop: "{{ monitors }}"
+
+
+

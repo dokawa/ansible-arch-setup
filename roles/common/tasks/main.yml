@@ -1,9 +1,18 @@
-- name: check updates
-  pacman: 
-   update_cache: yes
-   upgrade: yes
+﻿# - name: install base-devel
+#   pacman:
+#     name:
+#       - archlinux-keyring
 
-- include: core-apps.yml
+# - name: check updates
+#   pacman: 
+#    update_cache: yes
+#    upgrade: yes
+#    force: yes
+
+# - include: core-apps.yml
+
+- include: fonts.yml
+
 
 # Install and configure zsh
 - include: zsh.yml

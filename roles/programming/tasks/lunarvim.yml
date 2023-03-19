@@ -4,6 +4,6 @@
     dest: "/tmp"
 
 - name: Run script
-  become: True
+  become: yes
   become_user: "{{ username }}"
   command: "bash /tmp/install.sh"

@@ -1,0 +1,11 @@
+- name: Install nerd fonts
+  vars:
+    nf_user: "{{ username }}"
+    nf_group: "{{ username }}"
+    nf_single_fonts:
+      - "Meslo/S/Bold/complete/Meslo LG S Bold Nerd Font Complete.ttf"
+      - "Meslo/S/Italic/complete/Meslo LG S Italic Nerd Font Complete.ttf"
+      - "Meslo/S/Regular/complete/Meslo LG S Regular Nerd Font Complete.ttf" 
+
+  include_role:
+    name: "nerdfonts"

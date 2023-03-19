@@ -1,9 +1,7 @@
 # # Web Browser
 
-# Install browsers
-- name: Install "{{item}}"
-  community.general.pacman:
-    name: 
-      - "{{item}}"
-    state: present
+- name: Install browsers
+  ansible.builtin.command:
+    cmd: echo n | yay -S "{{item}}"
+
   loop: "{{browsers}}"

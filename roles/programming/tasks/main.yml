@@ -1,2 +1,3 @@
-- include: lunarvim.yml
 - include: apps.yml
+# - include: lunarvim.yml
+

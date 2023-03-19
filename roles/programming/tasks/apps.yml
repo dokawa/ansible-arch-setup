@@ -2,11 +2,16 @@
   pacman:
     name:
       - yarn
-      - asdf-vm
       - neovim
+
+- name: Install with yay
+  ansible.builtin.command:
+    cmd: echo y | yay -S "{{item}}"
+  loop: ["asdf-vm", "g810-led-git"]
 
 - name: Programming apps
   pacman:
     name:
       - code
+      - python-virtualenv
       - pycharm-community-edition
