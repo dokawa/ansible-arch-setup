@@ -1,7 +1,10 @@
+
+
 - name: check updates
   pacman: 
    update_cache: yes
    upgrade: yes
+  become: true
 
 - include: core-apps.yml
 
@@ -13,7 +16,5 @@
 # - include: office.yml
 #   when: install_office == True
   
-# # AUR apps
-# - include: aur.yml
-#   when: use_aur == True
+
 

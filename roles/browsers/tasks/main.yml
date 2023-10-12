@@ -1,9 +1,7 @@
 # # Web Browser
 
 # Install browsers
-- name: Install "{{item}}"
-  community.general.pacman:
-    name: 
-      - "{{item}}"
-    state: present
-  loop: "{{browsers}}"
+- name: Install browsers
+  command:  yay -S --noconfirm --nocleanmenu --noeditmenu {{ item }}
+  with_items: "{{ browsers }}"
+    

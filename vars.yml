@@ -28,6 +28,7 @@ browsers:
     - google-chrome
     - chromium
     - opera
+    - vivaldi
 
 ## Installs LibreOffice Fresh when True
 install_office: True
@@ -36,12 +37,4 @@ install_office: True
 install_spacevim: True
 ## ===========================
 
-## AUR vars
-## ===========================
-use_aur: True
 
-aur:
-    dir: aur
-    packages:
-        - yay
-## ===========================
