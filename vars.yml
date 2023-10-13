@@ -5,6 +5,14 @@
 
 ## User info
 username: marcio
+nf_user: "{{username}}"
+
+nf_single_fonts: [ 
+    Meslo/S/Regular/MesloLGSNerdFont-Regular.ttf, 
+    Meslo/S/Italic/MesloLGSNerdFont-Italic.ttf,
+    Meslo/S/Bold/MesloLGSNerdFont-Bold.ttf,
+    Meslo/S/Bold-Italic/MesloLGSNerdFont-BoldItalic.ttf
+] 
 
 ## App Preferences
 ## ===========================
