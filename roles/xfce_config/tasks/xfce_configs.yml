@@ -36,6 +36,7 @@
     mode: 0774
   with_items:
     ['keyboard-layout.xml','keyboards.xml','xfce4-keyboard-shortcuts.xml']
+  become: yes
 
 - name: Copy panel config
   copy:

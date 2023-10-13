@@ -21,3 +21,4 @@
     name:
       - gnome-keyring 
       - libsecret
+  become: yes

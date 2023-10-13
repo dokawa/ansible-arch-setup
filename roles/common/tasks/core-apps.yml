@@ -8,7 +8,9 @@
     - tree
     - base-devel
     - gvfs-mtp 
+    - obsidian
    state: present
+  become: yes
 
 - name: Install archival utils
   pacman:
@@ -26,3 +28,6 @@
       - curl
       - wget
     state: present
+
+- name: Install dropbox
+  command: yay -S --noconfirm --noconfirm --nocleanmenu --noeditmenu dropbox

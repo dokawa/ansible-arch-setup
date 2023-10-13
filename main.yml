@@ -7,6 +7,6 @@
     
   roles:
       - { role: common, tags: [ common ] }
-      - { role: browsers, tags: [ browsers ] }
-      - { role: programming, tags: [ programming ] }
-      - { role: xfce_config, tags: [ xfce ] }
+      # - { role: browsers, tags: [ browsers ] }
+      # - { role: programming, tags: [ programming ] }
+      # - { role: xfce_config, tags: [ xfce ] }
