@@ -30,6 +30,16 @@
    group: "{{ username }}"
    mode: u+rw,g+r,o--
 
+- name: Check if p10k is installed 
+  stat:
+    path: /home/{{ username }}/.p10k.zsh
+  register: result
+
+- name: install p10k
+  command: yay -S --noconfirm --noconfirm --nocleanmenu --noeditmenu zsh-theme-powerlevel10k-git
+  command: echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+  when: not result.stat.exists
+
 - name: copy zsh p10k dotfile
   copy: 
    src: user_home/.p10k.zsh
@@ -39,4 +49,8 @@
    group: "{{ username }}"
    mode: u+rw,g+r,o--
 
+
+- name: change shell
+  command: chsh -s /bin/zsh
+  become: yes
 

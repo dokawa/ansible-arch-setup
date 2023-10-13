@@ -1,2 +1,5 @@
-- include: lunarvim.yml
 - include: apps.yml
+
+# TODO: fix, doesn't work rn
+# - include: lunarvim.yml
+

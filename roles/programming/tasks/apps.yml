@@ -2,11 +2,15 @@
   pacman:
     name:
       - yarn
+      - tk
       - asdf-vm
       - neovim
+      - docker
+  become: yes
 
 - name: Programming apps
   pacman:
     name:
-      - code
+      - visual-studio-code-bin
       - pycharm-community-edition
+  become: yes

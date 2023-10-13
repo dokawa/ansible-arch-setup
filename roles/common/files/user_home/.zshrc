@@ -6,9 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /opt/asdf-vm/asdf.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH=$HOME/istio-1.14.0/bin:etc/crc:$HOME/.local/bin:$HOME/tsl-scripts:/var/lib/snapd/snap/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 export EDITOR=lvim

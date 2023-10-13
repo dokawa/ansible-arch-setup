@@ -12,6 +12,10 @@
 - include: zsh.yml
   when: setup_zsh == True
 
+# TODO: fix, doesn't work rn
+# - name: Install g810 keyboard controller
+#   command: yay -S g810-led --noconfirm --nocleanmenu --noeditmenu 
+
 # # Office
 # - include: office.yml
 #   when: install_office == True

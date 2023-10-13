@@ -1,5 +1,0 @@
-- name: Install chrome
-  community.general.pacman:
-   name: 
-    - google-chrome
-   state: present 

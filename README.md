@@ -1,6 +1,6 @@
 - [Ansible Arch Linux Setup Project](#ansible-arch-linux-setup-project)
   - [Quick Start](#quick-start)
-    - [Step 1: Clone this repository](#step-1-clone-this-repository)
+    - [Step 1: Install yay](#step-1-install-yay)
     - [Step 2: Install Ansible](#step-2-install-ansible)
     - [Step 3: Update your system (optional)](#step-3-update-your-system-optional)
     - [Step 4: Update the username variable (critical)](#step-4-update-the-username-variable-critical)
@@ -21,16 +21,17 @@ I highly recommend you continue reading the sections below before proceeding wit
 
 It's assumed the first time you run the playbook you're doing it on a fairly minimal Arch installation, though it's certainly not required. The project has been tested thoroughly on a minimal Manjaro XFCE installation as well as ArcoLinux, but should work fine on any Arch or Arch based distro.
 
-### Step 1: Clone this repository
-`git clone --recurse-submodules https://github.com/linuxpiper/ansible-arch-setup.git`
-
-***NOTE: You must use --recurse-submodules for this to work***
+### Step 1: Install yay
 
 ### Step 2: Install Ansible
-`sudo pacman -Sy ansible`
+```
+sudo pacman -Sy ansible
+```
 
 ### Step 3: Update your system (optional)
-`sudo pacman -Syu`
+```
+sudo pacman -Syu
+```
 
 If you are running this project on a brand new, fresh Arch install, you can go ahead and update your system via pacman prior to running the playbook. You don't have to, but expect that the playbook will take a little longer when running for the first time since it will do the updates.
 
