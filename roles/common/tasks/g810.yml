@@ -7,4 +7,4 @@
   become: yes
   
 - name: Copy content
-  copy: content="a 776677\nc\n" dest=/etc/g810-led/profile
+  copy: content="a 554444\nc\n" dest=/etc/g810-led/profile

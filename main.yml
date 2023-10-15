@@ -6,10 +6,11 @@
     - vars.yml
     
   roles:
-      # - { role: common, tags: [ common ] }
-      # - { role: browsers, tags: [ browsers ] }
-      # - { role: programming, tags: [ programming ] }
-      # - { role: xfce_config, tags: [ xfce ] }
+      - { role: common, tags: [ common ] }
+      - { role: browsers, tags: [ browsers ] }
+      - { role: programming, tags: [ programming ] }
+      - { role: xfce_config, tags: [ xfce ] }
+      - { role: work, tags: [ work ]}
 
       # You still need to change the terminal font to Meslo
       - { role: nerdfonts, tags: [ nerdfonts ], become: yes}

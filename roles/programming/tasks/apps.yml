@@ -8,6 +8,17 @@
       - docker
   become: yes
 
+- name: Enable docker service, and not touch the state
+  ansible.builtin.service:
+    name: docker
+    enabled: yes
+
+- name: Start docker service, if not started
+  ansible.builtin.service:
+    name: docker
+    state: started
+
+
 - name: Install IDEs
   pacman:
     name:

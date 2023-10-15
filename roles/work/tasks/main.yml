@@ -2,6 +2,7 @@
   pacman: 
    update_cache: yes
    upgrade: yes
+  become: yes
 
 - import_tasks: environment.yml
 

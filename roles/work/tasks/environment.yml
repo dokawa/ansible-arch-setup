@@ -4,11 +4,12 @@
       - virtualbox
       - virtualbox-guest-iso
       - virtualbox-host-dkms
+  become: yes
 
-- name: Slack
-  pacman:
-    name:
-      - slack-desktop
+# - name: Slack
+#   pacman:
+#     name:
+#       - slack-desktop
 
 
 
