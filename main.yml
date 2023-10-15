@@ -6,6 +6,7 @@
     - vars.yml
     
   roles:
+      - { role: base, tags: [ base ]}
       - { role: common, tags: [ common ] }
       - { role: browsers, tags: [ browsers ] }
       - { role: programming, tags: [ programming ] }

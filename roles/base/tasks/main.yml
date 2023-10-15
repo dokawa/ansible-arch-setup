@@ -1,0 +1,9 @@
+
+- name: Install base packages
+  community.general.pacman:
+    name: 
+    - archlinux-keyring
+    - base-devel
+    state: present
+  become: yes
+
