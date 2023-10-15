@@ -6,8 +6,14 @@
     - zsh
     - zsh-completions
     - zsh-syntax-highlighting
-    - zsh-autosuggestions
    state: present
+
+- name: Install zsh-autosuggestion
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest:  ~/.zsh/zsh-autosuggestions
+    single_branch: yes
+    version: master
 
 - name: Install fzf for zsh
   community.general.pacman:
