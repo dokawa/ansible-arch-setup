@@ -14,5 +14,5 @@
 
       # You still need to change the terminal font to Meslo
       - { role: nerdfonts, tags: [ nerdfonts ], become: yes}
-      
 
+      - { role: ntp, tags: [ ntp ] , become: yes}

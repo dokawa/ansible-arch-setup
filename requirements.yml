@@ -1,3 +1,7 @@
 - name: nerdfonts
   src: ctorgalson.nerdfonts
   version: v1.0.1
+
+- name: ntp
+  src: geerlingguy.ntp
+  version: 2.3.3

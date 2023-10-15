@@ -12,8 +12,6 @@
 
 - include: g810.yml
 
-- include: config.yml
-
 # # Office
 # - import_tasks:office.yml
 #   when: install_office == True
