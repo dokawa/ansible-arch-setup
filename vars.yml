@@ -5,6 +5,8 @@
 
 ## User info
 username: marcio
+
+## Nerdfonts
 nf_user: "{{username}}"
 
 nf_single_fonts: [ 
@@ -13,6 +15,9 @@ nf_single_fonts: [
     Meslo/S/Bold/MesloLGSNerdFont-Bold.ttf,
     Meslo/S/Bold-Italic/MesloLGSNerdFont-BoldItalic.ttf
 ] 
+
+## NTP
+ntp_timezone: "America/Sao_Paulo"
 
 ## App Preferences
 ## ===========================
