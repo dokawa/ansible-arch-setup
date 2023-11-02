@@ -4,7 +4,7 @@
   <property name="Default" type="empty">
     <property name="XkbDisable" type="bool" value="true"/>
     <property name="XkbLayout" type="string" value="br"/>
-    <property name="XkbVariant" type="string" value="nodeadkeys"/>
-    <property name="XkbModel" type="string" value="logitech_base"/>
+    <property name="XkbVariant" type="string" value="abnt2"/>
+    <property name="XkbModel" type="string" value="abnt2"/>
   </property>
 </channel>
