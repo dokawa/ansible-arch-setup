@@ -4,4 +4,12 @@
 - name: Install browsers
   command:  yay -S --noconfirm --nocleanmenu --noeditmenu {{ item }}
   with_items: "{{ browsers }}"
+
+
+- name: Install opera ffmpeg codec
+  pacman:
+    name:
+      - opera-ffmpeg-codecs
+    state: present
+    when: "opera" in browsers
     

@@ -4,6 +4,7 @@
     name: 
     - archlinux-keyring
     - base-devel
+    - ldmtool
     state: present
   become: yes
 
