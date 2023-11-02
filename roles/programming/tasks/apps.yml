@@ -18,6 +18,13 @@
     name: docker
     state: started
 
+- name: Install cuda
+  pacman:
+    name:
+      - cuda
+  become: yes
+
+
 
 - name: Install IDEs
   pacman:
