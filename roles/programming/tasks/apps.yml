@@ -24,6 +24,14 @@
       - cuda
   become: yes
 
+- name: Install nvidia-docker
+  command: yay -S --noconfirm --noconfirm --nocleanmenu --noeditmenu nvidia-docker
+
+- name: Restart docker service, in all cases
+  ansible.builtin.service:
+    name: docker
+    daemon_reload: true
+    state: restarted
 
 
 - name: Install IDEs
