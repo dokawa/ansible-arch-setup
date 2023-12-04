@@ -11,5 +11,5 @@
     name:
       - opera-ffmpeg-codecs
     state: present
-    when: "opera" in browsers
+    when: opera in browsers
     

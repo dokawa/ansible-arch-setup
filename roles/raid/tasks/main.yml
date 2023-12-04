@@ -1,0 +1,15 @@
+- name: Create systemd service file
+  template:
+    src: ldmtool.service.j2
+    dest: /etc/systemd/system/ldmtool.service
+    become: yes
+
+- name: Start and enable the ldmtool service
+  systemd:
+    name: ldmtool
+    state: started
+    enabled: yes
+
+- name: Reload daemon
+  ansible.builtin.service:
+    daemon_reload: true

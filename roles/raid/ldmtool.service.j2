@@ -1,0 +1,10 @@
+[Unit]
+Description=Run ldmtool create all before mount
+Before=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/ldmtool create all
+
+[Install]
+WantedBy=multi-user.target
