@@ -2,6 +2,9 @@
 Description=Run ldmtool create all before mount
 Before=local-fs.target
 
+### This avoids dependency cycles
+DefaultDependencies=no
+
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/ldmtool create all
