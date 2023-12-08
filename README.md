@@ -1,12 +1,3 @@
-- [Ansible Arch Linux Setup Project](#ansible-arch-linux-setup-project)
-  - [Quick Start](#quick-start)
-    - [Step 1: Install yay](#step-1-install-yay)
-    - [Step 2: Install Ansible](#step-2-install-ansible)
-    - [Step 3: Update your system (optional)](#step-3-update-your-system-optional)
-    - [Step 4: Update the username variable (critical)](#step-4-update-the-username-variable-critical)
-    - [Step 5: Run the Playbook](#step-5-run-the-playbook)
-    - [Step 6: Reboot](#step-6-reboot)
-
 
 # Ansible Arch Linux Setup Project 
 The Ansible Arch setup project aims to make your life easier when setting up a new environment with Arch Linux by automating a number of configurations and installations. Additionally, the project can assist in keeping your existing environment consistent and updated the way you like it!
@@ -37,7 +28,17 @@ Open up `roles/common/vars/main.yml` and change the `username` value to the appr
 You absolutely should review all of the vars config file and modify it to your liking, however changing the `username` variable to match the username you are running this project for is the minimum you need to do.
 
 
-### Step 5: Run the Playbook
+### Step 5: Install aur collection:
+
+```# Create the user custom module directory
+mkdir -p ~/.ansible/plugins/modules
+
+# Install the aur module into the user custom module directory
+curl -o ~/.ansible/plugins/modules/aur.py https://raw.githubusercontent.com/kewlfft/ansible-aur/master/plugins/modules/aur.py
+```
+
+
+### Step 6: Run the Playbook
 While in the `roles` directory, execute:
 
 `ansible-playbook -K main.yml`

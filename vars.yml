@@ -30,6 +30,7 @@ browsers:
     - chromium
     - opera
     - vivaldi
+    - microsoft-edge-stable-bin 
 
 # monitors:
 #     # - monitorDP-0

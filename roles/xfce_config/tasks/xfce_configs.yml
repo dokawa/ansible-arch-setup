@@ -28,12 +28,14 @@
   become_user: "{{ username }}"
   command: 'xfconf-query --channel xfce4-desktop --property /backdrop/screen0/"monitor{{item}}"/workspace0/last-image --set /tmp/wallpaper.png'
   loop: "{{ monitors }}"
+  when: "'None' not in item"   # sometimes a weird None monitor appears
 
 - name: Copy xfce keyboard files
   copy:
     src: keyboard/{{item}}
     dest: /home/{{ username }}/.config/xfce4/xfconf/xfce-perchannel-xml/
     mode: 0774
+    force: False
   with_items:
     ['keyboard-layout.xml','keyboards.xml','xfce4-keyboard-shortcuts.xml']
   become: yes

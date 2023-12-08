@@ -10,7 +10,7 @@
 - import_tasks: zsh.yml
 
 
-- include: g810.yml
+- import_tasks: g810.yml
 
 # # Office
 # - import_tasks:office.yml

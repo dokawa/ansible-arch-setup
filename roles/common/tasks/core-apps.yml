@@ -31,4 +31,6 @@
     state: present
 
 - name: Install dropbox
-  command: yay -S --noconfirm --noconfirm --nocleanmenu --noeditmenu dropbox
+  aur:
+    name: dropbox
+    state: present

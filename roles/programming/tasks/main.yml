@@ -1,4 +1,4 @@
-- include: apps.yml
+- import_tasks: apps.yml
 
 # TODO: fix, doesn't work rn
 # - include: lunarvim.yml

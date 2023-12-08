@@ -2,7 +2,9 @@
 
 # Install browsers
 - name: Install browsers
-  command:  yay -S --noconfirm --nocleanmenu --noeditmenu {{ item }}
+  aur:
+      name: "{{ item }}"
+      state: present
   with_items: "{{ browsers }}"
 
 
@@ -11,5 +13,5 @@
     name:
       - opera-ffmpeg-codecs
     state: present
-    when: opera in browsers
+  when: "'opera' in browsers"
     

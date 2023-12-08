@@ -42,7 +42,9 @@
   register: result
 
 - name: Install p10k
-  command: yay -S --noconfirm --noconfirm --nocleanmenu --noeditmenu zsh-theme-powerlevel10k-git
+  aur:
+      name: zsh-theme-powerlevel10k-git
+      state: present
   when: not result.stat.exists
 
 - name: Add to source
