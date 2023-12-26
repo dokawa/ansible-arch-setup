@@ -36,10 +36,13 @@ mkdir -p ~/.ansible/plugins/modules
 # Install the aur module into the user custom module directory
 curl -o ~/.ansible/plugins/modules/aur.py https://raw.githubusercontent.com/kewlfft/ansible-aur/master/plugins/modules/aur.py
 ```
+### Step 6: Install roles
+While in the root directory, execute:
 
+`ansible-galaxy install -r requirements.yml`
 
-### Step 6: Run the Playbook
-While in the `roles` directory, execute:
+### Step 7: Run the Playbook
+While in the root directory, execute:
 
 `ansible-playbook -K main.yml`
 
