@@ -30,6 +30,7 @@
       - curl
       - wget
     state: present
+  become: yes
 
 - name: Install dropbox
   aur:

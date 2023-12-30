@@ -3,20 +3,30 @@
     name:
       - yarn
       - tk
-      - asdf-vm
       - neovim
       - docker
   become: yes
+
+- name: Install aur programming core
+  aur:
+    name:
+      - asdf-vm
 
 - name: Enable docker service, and not touch the state
   ansible.builtin.service:
     name: docker
     enabled: yes
 
-- name: Start docker service, if not started
-  ansible.builtin.service:
-    name: docker
-    state: started
+- block:
+  - name: Start docker service, if not started
+    service:
+      name: docker
+      state: started
+    become: yes
+  rescue:
+    - fail:
+        msg: >
+          If this fails with dependency error, need to restart
 
 - name: Install cuda
   pacman:
@@ -34,6 +44,7 @@
     name: docker
     daemon_reload: true
     state: restarted
+  become: yes
 
 
 - name: Install IDEs

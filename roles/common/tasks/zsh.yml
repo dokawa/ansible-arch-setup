@@ -7,6 +7,7 @@
     - zsh-completions
     - zsh-syntax-highlighting
    state: present
+  become: yes
 
 - name: Install zsh-autosuggestion
   ansible.builtin.git:
@@ -20,6 +21,7 @@
    name: 
     - fzf
    state: present
+  become: yes
 
 - name: Change {{ username }}'s shell to zsh
   become: yes

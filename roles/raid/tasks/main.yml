@@ -9,7 +9,9 @@
     name: ldmtool
     state: started
     enabled: yes
+  become: yes
 
 - name: Reload daemon
   ansible.builtin.service:
     daemon_reload: true
+  become: yes
