@@ -22,6 +22,7 @@
       - tar
       - xarchiver
     state: present
+  become: yes
 
 - name: Install download utils
   pacman:

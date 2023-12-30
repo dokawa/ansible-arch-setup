@@ -1,10 +1,12 @@
-# TODO: fix, doesn't work rn PR already in place, needs merge
-# - name: Install g810 keyboard controller
-#   command: yay -S g810-led --noconfirm --nocleanmenu --noeditmenu 
+# Issue with aur repository
+# - name: Install g810 controller
+#   aur:
+#       name: g810-led-git
+#       state: present
 
-- name: Change ownerhsip
-  command: chown {{username}} -R /etc/g810-led
-  become: yes
+# - name: Change ownerhsip
+#   command: chown {{username}} -R /etc/g810-led
+#   become: yes
   
-- name: Copy content
-  copy: content="a 554444\nc\n" dest=/etc/g810-led/profile
+# - name: Copy content
+#   copy: content="a 554444\nc\n" dest=/etc/g810-led/profile

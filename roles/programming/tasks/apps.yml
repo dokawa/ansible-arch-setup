@@ -37,7 +37,7 @@
 
 
 - name: Install IDEs
-  pacman:
+  aur:
     name:
       - visual-studio-code-bin
       - pycharm-community-edition

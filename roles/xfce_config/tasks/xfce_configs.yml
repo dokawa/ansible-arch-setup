@@ -12,23 +12,23 @@
 - name: List monitors
   debug: msg="Monitors detected {{ monitors }}"
 
-- name: Copy background to tmp
-  become: True
-  become_user: "{{ username }}"
-  copy: 
-   src: background/wallpaper.png
-   dest: /tmp/wallpaper.png
-   force: False
-   owner: "{{ username }}"
-   group: "{{ username }}"
-   mode: u+rw,g+r,o--
+# - name: Copy background to tmp
+#   become: True
+#   become_user: "{{ username }}"
+#   copy: 
+#    src: background/wallpaper.png
+#    dest: /tmp/wallpaper.png
+#    force: False
+#    owner: "{{ username }}"
+#    group: "{{ username }}"
+#    mode: u+rw,g+r,o--
 
-- name: Change background
-  become: True
-  become_user: "{{ username }}"
-  command: 'xfconf-query --channel xfce4-desktop --property /backdrop/screen0/"monitor{{item}}"/workspace0/last-image --set /tmp/wallpaper.png'
-  loop: "{{ monitors }}"
-  when: "'None' not in item"   # sometimes a weird None monitor appears
+# - name: Change background
+#   become: True
+#   become_user: "{{ username }}"
+#   command: 'xfconf-query --channel xfce4-desktop --property /backdrop/screen0/"monitor{{item}}"/workspace0/last-image --set /tmp/wallpaper.png'
+#   loop: "{{ monitors }}"
+#   when: "'None' not in item"   # sometimes a weird None monitor appears
 
 - name: Copy xfce keyboard files
   copy:
