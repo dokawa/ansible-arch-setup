@@ -15,4 +15,4 @@ source /opt/asdf-vm/asdf.sh
 export PATH=$HOME/.local/bin:/opt/cuda/bin:$PATH
 
 
-export EDITOR=lvim
+export EDITOR=nvim
