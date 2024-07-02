@@ -1,0 +1,5 @@
+- name: Install noto fonts for japanese characters
+  aur:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ noto_fonts }}"

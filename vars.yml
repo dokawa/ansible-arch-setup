@@ -9,12 +9,13 @@ username: marcio
 ## Nerdfonts
 nf_user: "{{username}}"
 
-nf_single_fonts: [ 
-    Meslo/S/Regular/MesloLGSNerdFont-Regular.ttf, 
+nf_single_fonts:
+  [
+    Meslo/S/Regular/MesloLGSNerdFont-Regular.ttf,
     Meslo/S/Italic/MesloLGSNerdFont-Italic.ttf,
     Meslo/S/Bold/MesloLGSNerdFont-Bold.ttf,
-    Meslo/S/Bold-Italic/MesloLGSNerdFont-BoldItalic.ttf
-] 
+    Meslo/S/Bold-Italic/MesloLGSNerdFont-BoldItalic.ttf,
+  ]
 
 ## NTP
 ntp_timezone: "America/Sao_Paulo"
@@ -24,13 +25,13 @@ ntp_timezone: "America/Sao_Paulo"
 # Web Browser
 # Value can be: firefox, brave, or chromium
 browsers:
-    - firefox
-    - brave-bin
-    - google-chrome
-    - chromium
-    - opera
-    - vivaldi
-    - microsoft-edge-stable-bin 
+  - firefox
+  - brave-bin
+  - google-chrome
+  - chromium
+  - opera
+  - vivaldi
+  - microsoft-edge-stable-bin
 
 # monitors:
 #     # - monitorDP-0
@@ -38,8 +39,10 @@ browsers:
 #     # - monitorHDMI-0
 #     monitoreDP1
 
+noto_fonts:
+  - noto-fonts-cjk
+  - noto-fonts-emoji
+  - noto-fonts
+
 ## Installs LibreOffice Fresh when True
 install_office: True
-
-
-
