@@ -1,10 +1,9 @@
-
 - name: Install base packages
   community.general.pacman:
-    name: 
-    - archlinux-keyring
-    - base-devel
-    - ldmtool
+    name:
+      - archlinux-keyring
+      - base-devel
+      - ldmtool
+      - libxcrypt-compat # solves libcrypt.so.xx issues
     state: present
   become: yes
-
