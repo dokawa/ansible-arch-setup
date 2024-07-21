@@ -6,6 +6,12 @@
       - virtualbox-host-dkms
   become: yes
 
+- name: Linux headers (needed for vboxdrv)
+  pacman:
+    name:
+      - linux-headers
+  become: yes
+
 - name: Add vboxdrv module
   community.general.modprobe:
     name: vboxdrv

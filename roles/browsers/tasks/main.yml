@@ -12,5 +12,7 @@
     name:
       - opera-ffmpeg-codecs
     state: present
+    extra_args: --noconfirm
+    use: yay
   when: "'opera' in browsers"
   become: yes

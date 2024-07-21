@@ -1,0 +1,7 @@
+- name: Disable systemd-networkd
+  systemd:
+    name: systemd-networkd
+    state: stopped
+    enabled: no
+    masked: yes
+  become: yes
