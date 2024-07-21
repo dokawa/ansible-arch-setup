@@ -33,9 +33,8 @@
   copy: 
    src: user_home/.zshrc 
    dest: /home/{{ username }}/.zshrc
-   force: False
+   force: True
    owner: "{{ username }}"
-   group: "{{ username }}"
    mode: u+rw,g+r,o--
 
 - name: Check if p10k is installed 
@@ -50,7 +49,7 @@
   when: not result.stat.exists
 
 - name: Add to source
-  command: echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+  command: echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc
   when: not result.stat.exists
 
 - name: Copy zsh p10k dotfile
@@ -62,6 +61,7 @@
    group: "{{ username }}"
    mode: u+rw,g+r,o--
   when: not result.stat.exists
+  become: yes
 
 - name: Change shell
   command: chsh -s /bin/zsh
