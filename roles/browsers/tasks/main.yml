@@ -3,16 +3,14 @@
 # Install browsers
 - name: Install browsers
   aur:
-      name: "{{ item }}"
-      state: present
+    name: "{{ item }}"
+    state: present
   with_items: "{{ browsers }}"
 
-
 - name: Install opera ffmpeg codec
-  pacman:
+  aur:
     name:
       - opera-ffmpeg-codecs
     state: present
   when: "'opera' in browsers"
   become: yes
-    
