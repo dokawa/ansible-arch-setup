@@ -4,7 +4,7 @@
    upgrade: yes
   become: true
 
-- import_tasks: core-apps.yml
+- import_tasks: apps.yml
 
 # Install and configure zsh
 - import_tasks: zsh.yml
