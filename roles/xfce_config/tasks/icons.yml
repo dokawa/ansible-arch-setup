@@ -1,0 +1,29 @@
+- name: Install tela-circle theme
+  aur:
+    name: tela-circle-icon-theme
+    state: present
+    extra_args: --noconfirm
+    use: yay
+
+
+# Ensure the config directory exists
+- name: Create config directory for GTK 3.0
+  file:
+    path: "{{ ansible_env.HOME }}/.config/gtk-3.0"
+    state: directory
+
+# Set the GTK 3.0 icon theme
+- name: Set GTK 3.0 icon theme
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.config/gtk-3.0/settings.ini"
+    regexp: '^gtk-icon-theme-name='
+    line: 'gtk-icon-theme-name=tela-circle-dark'
+    create: yes
+
+# Set the GTK 4.0 icon theme
+- name: Set GTK 4.0 icon theme
+  lineinfile:
+    path: "{{ ansible_env.HOME }}/.gtkrc-4.0"
+    regexp: '^gtk-icon-theme-name='
+    line: 'gtk-icon-theme-name="tela-circle-dark"'
+    create: yes
