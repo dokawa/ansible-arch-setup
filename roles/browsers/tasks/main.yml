@@ -15,4 +15,3 @@
     extra_args: --noconfirm
     use: yay
   when: "'opera' in browsers"
-  become: yes

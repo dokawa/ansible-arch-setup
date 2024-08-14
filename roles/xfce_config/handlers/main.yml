@@ -1,5 +1,2 @@
 - name: Restart panel
   command: xfce4-panel -r
-  become:  yes
-
-

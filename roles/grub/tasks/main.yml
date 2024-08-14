@@ -1,0 +1,24 @@
+- name: Backup current GRUB configuration
+  copy:
+    src: /etc/grub.d/40_custom
+    dest: /etc/grub.d/40_custom.bak
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+
+- name: Add Windows entry to 40_custom
+  blockinfile:
+    path: /etc/grub.d/40_custom
+    insertafter: EOF
+    block: |
+      menuentry "Windows 10" {
+          set root='(hd0,msdos1)'
+          chainloader +1
+      }
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Update GRUB configuration (Arch Linux)
+  command: grub-mkconfig -o /boot/grub/grub.cfg
