@@ -7,3 +7,5 @@
       - libxcrypt-compat # solves libcrypt.so.xx issues
     state: present
   become: yes
+
+- import_tasks: yay.yml

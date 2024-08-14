@@ -8,27 +8,25 @@ I highly recommend you continue reading the sections below before proceeding wit
 
 It's assumed the first time you run the playbook you're doing it on a fairly minimal Arch installation, though it's certainly not required. The project has been tested on a XFCE installation
 
-### Step 1: Install yay
-
-### Step 2: Install Ansible
+### Step 1: Install Ansible
 
 ```
 sudo pacman -Sy ansible
 ```
 
-### Step 3: Update your system (optional)
+### Step 2: Update your system (optional)
 
 ```
 sudo pacman -Syu
 ```
 
-### Step 4: Update the username variable (critical)
+### Step 3: Update the username variable (critical)
 
 Open up `roles/common/vars/main.yml` and change the `username` value to the appropriate user name for your system.
 
 You absolutely should review all of the vars config file and modify it to your liking, however changing the `username` variable to match the username you are running this project for is the minimum you need to do.
 
-### Step 5: Install aur collection:
+### Step 4: Install aur collection:
 
 ```# Create the user custom module directory
 mkdir -p ~/.ansible/plugins/modules
@@ -37,13 +35,13 @@ mkdir -p ~/.ansible/plugins/modules
 curl -o ~/.ansible/plugins/modules/aur.py https://raw.githubusercontent.com/kewlfft/ansible-aur/master/plugins/modules/aur.py
 ```
 
-### Step 6: Install roles
+### Step 5: Install roles
 
 While in the root directory, execute:
 
 `ansible-galaxy install -r requirements.yml`
 
-### Step 7: Run the Playbook
+### Step 6: Run the Playbook
 
 While in the root directory, execute:
 

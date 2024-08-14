@@ -1,0 +1,28 @@
+- name: Check if yay is already installed
+  command: yay --version
+  register: yay_installed
+  ignore_errors: yes
+
+- name: Clone yay repository if not installed
+  git:
+    repo: https://aur.archlinux.org/yay-bin.git
+    dest: /tmp/yay-bin
+    clone: yes
+    update: no
+  when: yay_installed.rc != 0
+
+- name: Build and install yay if not installed
+  command: makepkg -si
+  args:
+    chdir: /tmp/yay-bin
+  environment:
+    PKGDEST: /tmp
+  become: yes
+  when: yay_installed.rc != 0
+
+- name: Clean up yay installation files
+  file:
+    path: /tmp/yay-bin
+    state: absent
+    recurse: yes
+  when: yay_installed.rc != 0
