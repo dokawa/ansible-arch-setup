@@ -54,3 +54,11 @@ The `-K` parameter is equivalent to `--ask-become-pass` and is used to collect y
 Most yml files that customize app configuration can be found in `roles/<role_name>/tasks`.
 
 ### Step 6: Reboot
+
+## Troubleshooting
+
+### Fix key errors
+
+```
+sudo pacman-key --populate archlinux
+```
