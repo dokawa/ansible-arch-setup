@@ -7,20 +7,20 @@
   roles:
     - { role: base, tags: [base] }
     - { role: common, tags: [common] }
-    - { role: browsers, tags: [browsers] }
+    #  - { role: browsers, tags: [browsers] }
     - { role: programming, tags: [programming] }
-    - { role: xfce_config, tags: [xfce] }
-    - { role: work, tags: [work] }
+    # - { role: xfce_config, tags: [xfce] }
+    # - { role: work, tags: [work] }
     
-    - { role: raid, tags: [raid] }
+    # - { role: raid, tags: [raid] }
 
     # You still need to change the terminal font to Meslo
     - { role: nerdfonts, tags: [nerdfonts], become: yes }
     - { role: noto_fonts, tags: [noto_fonts], become: yes }
 
-    - { role: ntp, tags: [ntp], become: yes }
+    # - { role: ntp, tags: [ntp], become: yes }
 
-    - { role: grub, tags: [grub], become: yes }
+    # - { role: grub, tags: [grub], become: yes }
     #  My arch installation has network issues for having two network managers
     #  that can be checked with:
     #
