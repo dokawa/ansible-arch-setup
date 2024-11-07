@@ -53,7 +53,7 @@
 
 - name: Install nvidia-docker
   aur:
-    name: nvidia-docker
+    name: nvidia-docker2
     state: present
 
 - name: Restart docker service, in all cases

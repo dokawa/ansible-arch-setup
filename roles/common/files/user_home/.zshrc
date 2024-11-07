@@ -14,5 +14,10 @@ source /opt/asdf-vm/asdf.sh
 
 export PATH=$HOME/.local/bin:/opt/cuda/bin:$PATH
 
-
 export EDITOR=nvim
+
+# File where history is saved
+HISTFILE=~/.zsh_history
+# Number of commands to save in the history file
+HISTSIZE=10000
+SAVEHIST=10000
