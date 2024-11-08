@@ -21,3 +21,12 @@ HISTFILE=~/.zsh_history
 # Number of commands to save in the history file
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Move to the beginning of the line
+bindkey "\e[H" beginning-of-line
+
+# Move to the end of the line
+bindkey "\e[F" end-of-line
+
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
