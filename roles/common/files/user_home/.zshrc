@@ -30,3 +30,6 @@ bindkey "\e[F" end-of-line
 
 bindkey "\e[1;5C" forward-word
 bindkey "\e[1;5D" backward-word
+
+# Enable keybinding for DEL to delete the character under the cursor
+bindkey '\e[3~' delete-char
