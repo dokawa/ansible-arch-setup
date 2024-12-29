@@ -4,6 +4,7 @@
       - yarn
       - tk
       - neovim
+      - ripgrep # this is used by nvim for grep search
       - fd # this is used by nvim for searching
       - docker
   become: yes
