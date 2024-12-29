@@ -6,6 +6,7 @@
       - neovim
       - ripgrep # this is used by nvim for grep search
       - fd # this is used by nvim for searching
+      - xclip # this is used by nvim for clipboard
       - docker
   become: yes
 
@@ -51,6 +52,11 @@
 #    name:
 #      - cuda
 #  become: yes
+
+- name: Install libcuda
+  pacman:
+    name:
+      - libcuda
 
 - name: Install nvidia-docker
   aur:
