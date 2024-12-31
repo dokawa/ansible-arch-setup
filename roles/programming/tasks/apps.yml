@@ -7,6 +7,7 @@
       - ripgrep # this is used by nvim for grep search
       - fd # this is used by nvim for searching
       - xclip # this is used by nvim for clipboard
+      - flake8 # this is used by nvim for python linting
       - docker
   become: yes
 
