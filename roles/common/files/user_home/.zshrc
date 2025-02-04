@@ -9,6 +9,12 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/asdf-vm/asdf.sh
 
+# Add keys
+eval "$(ssh-agent -s)" > /dev/null
+for key in ~/.ssh/*(.); do
+    [[ -f "$key" && "$key" != *.pub && "$key" != *known_hosts ]] && ssh-add "$key" > /dev/null 2>&1
+done
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
