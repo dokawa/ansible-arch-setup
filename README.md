@@ -39,13 +39,17 @@ curl -o ~/.ansible/plugins/modules/aur.py https://raw.githubusercontent.com/kewl
 
 While in the root directory, execute:
 
-`ansible-galaxy install -r requirements.yml`
+```
+ansible-galaxy install -r requirements.yml
+```
 
 ### Step 6: Run the Playbook
 
 While in the root directory, execute:
 
-`ansible-playbook -K main.yml`
+```
+ansible-playbook -K main.yml
+```
 
 The `-K` parameter is equivalent to `--ask-become-pass` and is used to collect your password for items requiring `become` permissions.
 
@@ -54,3 +58,11 @@ The `-K` parameter is equivalent to `--ask-become-pass` and is used to collect y
 Most yml files that customize app configuration can be found in `roles/<role_name>/tasks`.
 
 ### Step 6: Reboot
+
+## Troubleshooting
+
+### Fix key errors
+
+```
+sudo pacman-key --populate archlinux
+```

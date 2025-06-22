@@ -12,12 +12,11 @@
   when: yay_installed.rc != 0
 
 - name: Build and install yay if not installed
-  command: makepkg -si
+  command: makepkg -si --noconfirm
   args:
     chdir: /tmp/yay-bin
   environment:
     PKGDEST: /tmp
-  become: yes
   when: yay_installed.rc != 0
 
 - name: Clean up yay installation files

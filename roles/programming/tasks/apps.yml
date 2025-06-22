@@ -4,7 +4,10 @@
       - yarn
       - tk
       - neovim
+      - ripgrep # this is used by nvim for grep search
       - fd # this is used by nvim for searching
+      - xclip # this is used by nvim for clipboard
+      - flake8 # this is used by nvim for python linting
       - docker
   become: yes
 
@@ -17,6 +20,7 @@
   ansible.builtin.service:
     name: docker
     enabled: yes
+  become: yes
 
 - block:
   - name: Start docker service, if not started
@@ -44,15 +48,20 @@
     append: yes
   become: yes
 
-- name: Install cuda
+#- name: Install cuda
+#  pacman:
+#    name:
+#      - cuda
+#  become: yes
+
+- name: Install libcuda
   pacman:
     name:
-      - cuda
-  become: yes
+      - libcuda
 
 - name: Install nvidia-docker
   aur:
-    name: nvidia-docker
+    name: nvidia-docker2
     state: present
 
 - name: Restart docker service, in all cases
@@ -62,16 +71,16 @@
     state: restarted
   become: yes
 
-- name: Install IDEs
-  aur:
-    name:
-      - visual-studio-code-bin
-      - pycharm-community-edition
+# - name: Install IDEs
+#   aur:
+#     name:
+#       - visual-studio-code-bin
+#       - pycharm-community-edition
 
 # https://github.com/MicrosoftDocs/live-share/issues/224
-- name: Jupyter VSCode requirements
-  pacman:
-    name:
-      - gnome-keyring
-      - libsecret
-  become: yes
+# - name: Jupyter VSCode requirements
+#   pacman:
+#     name:
+#       - gnome-keyring
+#       - libsecret
+#   become: yes

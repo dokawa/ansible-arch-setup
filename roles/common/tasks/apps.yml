@@ -1,14 +1,14 @@
 - name: Install basic utils, shells, apps
   community.general.pacman:
    name:
-    - xorg
-    - vlc
-    - gimp
+#    - xorg
+#    - vlc
+#    - gimp
     - git
     - tree
     - base-devel
     - gvfs-mtp 
-    - obsidian
+#    - obsidian
    state: present
   become: yes
 
@@ -32,12 +32,12 @@
     state: present
   become: yes
 
-- name: Install dropbox
-  aur:
-    name: dropbox
-    state: present
+#- name: Install dropbox
+#  aur:
+#    name: dropbox
+#    state: present
 
-- name: Install sublime text
-  aur:
-    name: sublime-text-4
-    state: present
+#- name: Install sublime text
+#  aur:
+#    name: sublime-text-4
+#    state: present

@@ -9,10 +9,33 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/asdf-vm/asdf.sh
 
+# Add keys
+eval "$(ssh-agent -s)" > /dev/null
+for key in ~/.ssh/*(.); do
+    [[ -f "$key" && "$key" != *.pub && "$key" != *known_hosts ]] && ssh-add "$key" > /dev/null 2>&1
+done
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 export PATH=$HOME/.local/bin:/opt/cuda/bin:$PATH
 
-
 export EDITOR=nvim
+
+# File where history is saved
+HISTFILE=~/.zsh_history
+# Number of commands to save in the history file
+HISTSIZE=10000
+SAVEHIST=10000
+
+# Move to the beginning of the line
+bindkey "\e[H" beginning-of-line
+
+# Move to the end of the line
+bindkey "\e[F" end-of-line
+
+bindkey "\e[1;5C" forward-word
+bindkey "\e[1;5D" backward-word
+
+# Enable keybinding for DEL to delete the character under the cursor
+bindkey '\e[3~' delete-char
