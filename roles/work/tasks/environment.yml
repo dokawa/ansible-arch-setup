@@ -1,27 +1,7 @@
-- name: Virtual Machine
+- name: Slack
   pacman:
     name:
-      - virtualbox
-      - virtualbox-guest-iso
-      - virtualbox-host-dkms
-  become: yes
-
-- name: Linux headers (needed for vboxdrv)
-  pacman:
-    name:
-      - linux-headers
-  become: yes
-
-- name: Add vboxdrv module
-  community.general.modprobe:
-    name: vboxdrv
-    state: present
-  become: yes
-
-# - name: Slack
-#   pacman:
-#     name:
-#       - slack-desktop
+      - slack-desktop
 
 
 

@@ -62,10 +62,15 @@
     state: restarted
   become: yes
 
-- name: Install IDEs
+- name: Install Visual Studio Code
   aur:
     name:
       - visual-studio-code-bin
+
+
+- name: Install Pycharm
+  aur:
+    name:
       - pycharm-community-edition
 
 # https://github.com/MicrosoftDocs/live-share/issues/224

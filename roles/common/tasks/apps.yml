@@ -37,6 +37,11 @@
     name: dropbox
     state: present
 
+- name: Install dropbox dependency
+  aur:
+    name: libappindicator-gtk3
+    state: present
+
 - name: Install sublime text
   aur:
     name: sublime-text-4
